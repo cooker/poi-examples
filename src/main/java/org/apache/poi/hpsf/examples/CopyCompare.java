@@ -65,6 +65,14 @@ import org.apache.poi.util.TempFile;
  * streams, however, are compared logically: they must have the same sections
  * with the same attributes, and the sections must contain the same properties.
  * Details like the ordering of the properties do not matter.</p>
+ *
+ * 该类副本POI文件系统到一个新的文件和复制与原始进行比较。
+ *
+ * 属性集流逻辑复制，即应用程序建立一个PropertySet的原属性集，创建一个PropertySet并写入PropertySet到目的地POI文件系统。 - 流这是没有属性集流由位复制位。
+ *
+ * 在POI文件系统的比较逻辑来完成。 这意味着，包含POI文件系统中的两个磁盘文件不需要是完全相同。
+ * 然而，无论是POI文件系统必须包含相同的文件，大部分文件必须按位相同。 属性组流，但是，在逻辑上比较：
+ * 它们必须具有相同的属性相同的部分，并且这些部分必须包含相同的属性。 像属性的排序细节并不重要
  */
 public final class CopyCompare {
     private CopyCompare() {}
@@ -79,7 +87,9 @@ public final class CopyCompare {
      * not given, the copy will be written to a temporary file which will be
      * deleted at the end of the program.</li>
      * </ol>
-     *
+     * 运行的示例程序。 该应用程序需要一个或两个参数：
+     * 第一个参数是POI文件系统复制的磁盘文件名。
+     * 第二个参数是可选。 如果它被赋予，它是POI文件系统的副本将被写入到磁盘文件的名称。 如果没有给出，副本将被写入将在节目结束时删除临时文件
      * @param args Command-line arguments.
      * @throws IOException                  if any I/O exception occurs.
      * @throws UnsupportedEncodingException if a character encoding is not

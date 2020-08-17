@@ -28,6 +28,7 @@ import org.apache.poi.hslf.usermodel.HSLFTextBox;
 
 /**
  * Demonstrates how to create hyperlinks in PowerPoint presentations
+ * 演示如何创建PowerPoint演示文稿的超链接
  */
 public abstract class CreateHyperlink {
     

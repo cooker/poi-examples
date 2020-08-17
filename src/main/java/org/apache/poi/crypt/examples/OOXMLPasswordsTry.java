@@ -39,6 +39,8 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
  * For serious processing, you'd be best off grabbing the hash
  *  out with POI or office2john.py, then running that against
  *  "John The Ripper" or GPU enabled version of "hashcat"
+ *  尝试可能的密码列表为OOXML保护的文件。注意，这不是非常快，而且是针对当你有短短的密码来检查的。
+ *  对于严重的处理，你最好离敛散了与POI或office2john.py，然后运行，对“约翰开膛手”或GPU启用“hashcat”的版本
  */
 public class OOXMLPasswordsTry implements Closeable {
     private POIFSFileSystem fs;
